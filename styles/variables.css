@@ -14,3 +14,13 @@
   --pictures__gap: 10px;
   --section-pictures__margin-bottom: 40px;
 }
+
+@media (width >= 768px) {
+  :root {
+    --page__padding: 20px;
+    --header__margin-bottom: 60px;
+    --section__margin-bottom: 80px;
+    --pictures__gap: 20px;
+    --section-pictures__margin-bottom: 60px;
+  }
+}
