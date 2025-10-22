@@ -68,6 +68,7 @@
   color: var(--accent-color);
   text-transform: lowercase;
   padding: 1.5px 13px;
+  cursor: pointer;
 }
 
 .header__theme-menu-button:hover {
