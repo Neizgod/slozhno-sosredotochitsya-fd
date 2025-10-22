@@ -10,6 +10,10 @@
   outline: none;
 }
 
+*:focus-visible {
+  outline: 1px solid currentColor;
+}
+
 body {
   min-inline-size: 375px;
   max-inline-size: 1440px;

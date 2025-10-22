@@ -3,12 +3,13 @@
   и их переопределение под различные устройства
 */
 :root {
-  --page__background-image: url('../images/cover-image-dark.png');
-  --page__padding: 10px;
-  --text-color: #F1B2CE;
-  --accent-color: #FF0070;
+  --page__background-image: url("../images/cover-image-dark.png");
+  --main__padding: 10px;
+  --text-color: #f1b2ce;
+  --accent-color: #ff0070;
   --accent__title-color: #000028;
-  --header__title-color: #DB00FF;
+  --header__title-color: #db00ff;
+  --border-decoration__color: #ff0070;
   --header__margin-bottom: 40px;
   --section__margin-bottom: 50px;
   --pictures__gap: 10px;
@@ -17,8 +18,8 @@
 
 @media (width >= 768px) {
   :root {
-    --page__padding: 20px;
-    --header__margin-bottom: 60px;
+    --main__padding: 20px;
+    --header__margin-bottom: 50px;
     --section__margin-bottom: 80px;
     --pictures__gap: 20px;
     --section-pictures__margin-bottom: 60px;
