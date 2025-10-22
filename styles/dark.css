@@ -29,6 +29,6 @@
   color: var(--accent-color);
 }
 
-:root.theme-dark .section__pictures .section__title {
+:root.theme-dark .section__pictures-title {
   color: var(--accent__title-color);
 }

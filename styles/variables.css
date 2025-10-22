@@ -11,7 +11,7 @@
   --header__title-color: #db00ff;
   --border-decoration__color: #ff0070;
   --header__margin-bottom: 40px;
-  --section__margin-bottom: 50px;
+  --section__margin-bottom: 49px;
   --pictures__gap: 10px;
   --section-pictures__margin-bottom: 40px;
 }
@@ -19,7 +19,7 @@
 @media (width >= 768px) {
   :root {
     --main__padding: 20px;
-    --header__margin-bottom: 60px;
+    --header__margin-bottom: 59px;
     --section__margin-bottom: 80px;
     --pictures__gap: 20px;
     --section-pictures__margin-bottom: 60px;

@@ -6,7 +6,7 @@
   background-size: cover;
   background-attachment: fixed;
   font-size: 18px;
-  font-family: "IBM Plex Mono", sans-serif;
+  font-family: "IBM Plex Mono", monospace;
   font-weight: 400;
   line-height: 23.4px;
   color: var(--text-color);
@@ -23,12 +23,16 @@
   min-block-size: 668px;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(3, minmax(229px, 1fr));
+  grid-template-rows: 1fr min-content 1fr;
   padding: 10px;
   margin-block-end: var(--header__margin-bottom);
 }
 
-.header::before {
+.decorated-zone {
+  position: relative;
+}
+
+.decorated-zone::before {
   position: absolute;
   right: 9px;
   top: 9px;
@@ -39,7 +43,7 @@
   border-top: 1px solid var(--border-decoration__color);
 }
 
-.header::after {
+.decorated-zone::after {
   position: absolute;
   left: 11px;
   bottom: 11px;
@@ -73,7 +77,7 @@
 
 .header__theme-menu-button:hover {
   outline: 1px solid currentColor;
-  outline-color: rgba(255, 0, 112, 0.4); 
+  outline-color: rgba(255, 0, 112, 0.4);
 }
 
 .header__theme-menu-button_active {
@@ -95,10 +99,11 @@
 }
 
 .header__text {
-  max-block-size: 117px;
   font-weight: 700;
   text-wrap: balance;
-  margin-block-start: 17px;
+  margin-block-start: -1px;
+  align-self: center;
+  justify-self: center;
 }
 
 .title-decor {
@@ -138,10 +143,15 @@
   color: var(--accent-color);
 }
 
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .card__title {
   font-size: inherit;
   font-weight: 700;
-  margin-block-end: 10px;
 }
 
 .link {
@@ -150,11 +160,26 @@
 }
 
 .link:hover {
-  text-decoration: underline;
+  border-bottom: 1px solid currentColor;
 }
 
-.section__how-to-concentrate-better h2 + p {
+.section__factors-reducing-concentrations {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.section__factors-reducing-concentrations > .section__title {
+  grid-column: 1;
+}
+
+.section__factors-reducing-concentrations > .card {
+  grid-column: 1 / 3;
+}
+
+.section__how-to-concentrate-better__another-title {
   font-weight: 700;
+  font-size: inherit;
 }
 
 .section__how-to-concentrate-better .card__title {
@@ -194,44 +219,11 @@
   text-shadow: 2px 2px 0 var(--accent-color);
 }
 
-.footer::before {
-  position: absolute;
-  right: 9px;
-  top: 8px;
-  content: "";
-  width: 25px;
-  height: 25px;
-  border-right: 1px solid var(--border-decoration__color);
-  border-top: 1px solid var(--border-decoration__color);
-}
-
-.footer::after {
-  position: absolute;
-  left: 11px;
-  bottom: 13px;
-  content: "";
-  width: 25px;
-  height: 25px;
-  border-left: 1px solid var(--border-decoration__color);
-  border-bottom: 1px solid var(--border-decoration__color);
-}
-
-@media (width >= 768px) {
+@media (min-width: 768px) {
   .header {
     grid-template-columns: repeat(2, 1fr);
     min-block-size: 1024px;
     padding: 0 20px 0 0;
-    grid-template-rows: repeat(3, minmax(464px, 1fr));
-  }
-
-  .header::before {
-    right: 20px;
-    top: 19px;
-  }
-
-  .header::after {
-    left: 20px;
-    bottom: 21px;
   }
 
   .header__theme-menu {
@@ -247,13 +239,23 @@
   .header__text {
     grid-column: 2/3;
     grid-row: 3;
-    margin-block-start: -204px;
+    margin-block-start: -20px;
     margin-inline-start: 10px;
   }
 
   .header__decoration {
     right: 29px;
     top: 21px;
+  }
+
+  .decorated-zone::before {
+    right: 20px;
+    top: 20px;
+  }
+
+  .decorated-zone::after {
+    left: 20px;
+    bottom: 20px;
   }
 
   .section__concentations-difficulties {
@@ -265,24 +267,20 @@
   }
 
   .section__factors-reducing-concentrations {
-    grid-template-columns: minmax(236px, 315px) minmax(472px, 1fr);
+    grid-template-columns: 236px minmax(472px, 1fr);
     row-gap: 20px;
     column-gap: 10px;
   }
 
-  .section__factors-reducing-concentrations > .section__title {
-    grid-column: 1;
-  }
-
   .section__factors-reducing-concentrations .card {
-    grid-column: 1/4;
+    grid-column: 1 / 4;
   }
 
   .section__how-to-concentrate-better {
     grid-template-columns: minmax(236px, 315px) minmax(472px, 1fr);
   }
 
-  .section__how-to-concentrate-better h2 + p {
+  .section__how-to-concentrate-better__another-title {
     grid-row: 1/2;
     grid-column: 2;
     z-index: 1;
@@ -293,7 +291,7 @@
     grid-column: 2;
   }
 
-  .section__how-to-concentrate-better p + .card {
+  .section__how-to-concentrate-better__another-title + .card {
     margin-block-start: 43.4px;
     grid-row: 1;
   }
@@ -337,27 +335,16 @@
   .footer__title {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
-
-  .footer::before {
-    top: 17px;
-    right: 17px;
-  }
-
-  .footer::after {
-    left: 21px;
-    bottom: 21px;
-  }
 }
 
-@media (width >= 1024px) {
+@media (min-width: 1024px) {
   .header {
     min-block-size: 768px;
-    grid-template-rows: repeat(3, minmax(319px, 1fr));
   }
 
   .header__text {
-    max-block-size: 71px;
-    margin-block-start: -75px;
+    margin-block-start: -21px;
+    margin-inline-start: 11px;
   }
 
   .header__theme-menu {
@@ -369,18 +356,28 @@
   }
 
   .header__theme-menu-list {
-    display: flex;
     flex-direction: row;
   }
 
   .section__factors-reducing-concentrations {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(315px, 1fr));
     column-gap: 20px;
+    container-type: inline-size;
+  }
+
+  .section__factors-reducing-concentrations .section__title {
+    grid-column: 1 / 4;
+  }
+
+  /* По другому я не придумал как сделать заголовок такой же ширины как и в проекте без жесткой фиксации (я думал часа 3), здесь можно вычислить любое значение. */
+  @container (max-width: 2000px) { 
+    .section__factors-reducing-concentrations .section__title {
+      inline-size: calc(30cqw - 35px);
+    }
   }
 
   .section__factors-reducing-concentrations .card {
     grid-column: auto;
-    grid-row: 2 / 3;
   }
 
   .footer {
