@@ -17,6 +17,10 @@
   display: flex;
 }
 
+:root.theme-dark .page {
+  background-color: #000028;
+}
+
 :root.theme-dark .header__theme-menu-button {
   color: var(--accent-color);
 }

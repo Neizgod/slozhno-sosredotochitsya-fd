@@ -10,6 +10,7 @@
   font-weight: 400;
   line-height: 23.4px;
   color: var(--text-color);
+  background-color: #000028;
 }
 
 .main {
@@ -22,7 +23,7 @@
   min-block-size: 668px;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(3, minmax(226px, 1fr));
+  grid-template-rows: repeat(3, minmax(229px, 1fr));
   padding: 10px;
   margin-block-end: var(--header__margin-bottom);
 }
@@ -90,7 +91,7 @@
   max-block-size: 117px;
   font-weight: 700;
   text-wrap: balance;
-  margin-block-start: 22px;
+  margin-block-start: 17px;
 }
 
 .title-decor {
@@ -213,20 +214,22 @@
     grid-template-columns: repeat(2, 1fr);
     min-block-size: 1024px;
     padding: 0 20px 0 0;
-    grid-template-rows: repeat(3, minmax(452px, 1fr));
+    grid-template-rows: repeat(3, minmax(464px, 1fr));
   }
 
   .header::before {
-    right: 17px;
+    right: 20px;
+    top: 19px;
   }
 
   .header::after {
     left: 20px;
-    bottom: 32px;
+    bottom: 21px;
   }
 
   .header__theme-menu {
     grid-column: 2;
+    margin-block-start: 17px;
   }
 
   .header__title {
@@ -237,11 +240,13 @@
   .header__text {
     grid-column: 2/3;
     grid-row: 3;
-    margin-block-start: -191px;
+    margin-block-start: -204px;
+    margin-inline-start: 10px;
   }
 
   .header__decoration {
-    right: 27px;
+    right: 29px;
+    top: 21px;
   }
 
   .section__concentations-difficulties {
@@ -254,6 +259,8 @@
 
   .section__factors-reducing-concentrations {
     grid-template-columns: minmax(236px, 315px) minmax(472px, 1fr);
+    row-gap: 20px;
+    column-gap: 10px;
   }
 
   .section__factors-reducing-concentrations > .section__title {
@@ -338,19 +345,19 @@
 @media (width >= 1024px) {
   .header {
     min-block-size: 768px;
-    grid-template-rows: repeat(3, minmax(308px, 1fr));
+    grid-template-rows: repeat(3, minmax(319px, 1fr));
   }
 
   .header__text {
     max-block-size: 71px;
-    margin-block-start: -64px;
+    margin-block-start: -75px;
   }
 
   .header__theme-menu {
     align-self: self-start;
     justify-self: center;
     grid-column: 1/3;
-    margin-block-start: 6px;
+    margin-block-start: 18px;
     margin-inline-start: 20px;
   }
 
@@ -361,6 +368,7 @@
 
   .section__factors-reducing-concentrations {
     grid-template-columns: repeat(3, 1fr);
+    column-gap: 20px;
   }
 
   .section__factors-reducing-concentrations .card {

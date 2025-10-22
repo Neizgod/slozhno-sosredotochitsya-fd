@@ -13,6 +13,10 @@
   --border-decoration__color: #353430;
 }
 
+:root.theme-light .page {
+  background-color: #FFF1F7;
+}
+
 :root.theme-light .header__decoration {
   display: none;
 }
@@ -34,6 +38,11 @@
     --header__title-color: #ffc2e6;
     --border-decoration__color: #353430;
   }
+
+  .page {
+    background-color: #FFF1F7;
+  }
+
   .header__decoration {
     display: none;
   }
